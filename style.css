@@ -1,0 +1,60 @@
+* {
+	box-sizing: border-box;
+	font-family: Helvetica;
+}
+
+header {
+	height: 5em;
+}
+
+header span {
+	font-size: 3em;
+}
+
+.choose-city:hover {
+	color: red;
+	float: left;
+	margin-left: 1em;
+}
+
+.choose-city {
+	float: left;
+	margin-left: 1em;
+}
+
+.select-city {
+	display: none;
+}
+
+main span:nth-of-type(2) {
+	font-size: 2em;
+	text-align: center;
+}
+
+main {
+	text-align: center;
+}
+
+.weather {
+	border: 1px solid black;
+	height: 20em;
+} 
+
+.days {
+	margin-top: 3em;
+	margin-right: 1em;
+	display: inline-block;
+	width: 10em;
+	height: 14em;
+	border: 1px solid black;
+	border-radius: 1em;
+	text-align: center;
+}
+
+.days span {
+	margin-left: ;
+}
+
+ .parts-of-day {
+ 	display: inline-block;
+ }
