@@ -19,13 +19,28 @@ fetch(a).then(res=>res.json()).then(function(data) {
   		let temp = "від " + dayInf.low + " до " + dayInf.high;
   		let text = dayInf.text;
   		let date = dayInf.date;
+  		let day = dayInf.day;
   		let tempIns = document.getElementById('temp' + i);
   		let textIns = document.getElementById('text' + i);
   		let dateIns = document.getElementById('date' + i);
+  		let dayIns = document.getElementById('day' + i);  		
 
   		textIns.innerHTML = text;
   		tempIns.innerHTML = temp;
   		dateIns.innerHTML = date;
+  		dayIns.innerHTML = day;
+  	}
+
+  	let text = data.query.results.channel.item.forecast[0].text;
+
+  	if (text.includes('Cloudy')) {
+  		document.body.style.backgroundImage = 'url(img/cloudy.jpg)';
+  	} else if (text.includes('Rain')) {
+  		document.body.style.backgroundImage = 'url(img/raining.jpg)';
+  	} else if (text.includes('Sun')) {
+  		document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+  	} else if (text.includes('Snow')) {
+  		document.body.style.backgroundImage = 'url(img/snowy.jpg)';
   	}
 
   });

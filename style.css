@@ -3,6 +3,11 @@
 	font-family: Helvetica;
 }
 
+body {
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
 header {
 	height: 5em;
 }
@@ -55,6 +60,12 @@ main {
 	margin-left: ;
 }
 
- .parts-of-day {
- 	display: inline-block;
- }
+ .weekday {
+    background-color: rgba(255, 255, 255, 0.5);
+ 	margin: auto;
+ 	width: 50%;
+ 	border-left: 3px solid black;
+ 	border-bottom: 3px solid black;
+	border-right: 3px solid black;
+	border-radius: 10px;
+}
