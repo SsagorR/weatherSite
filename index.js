@@ -41,6 +41,8 @@ fetch(a).then(res=>res.json()).then(function(data) {
   		document.body.style.backgroundImage = 'url(img/sunny.jpg)';
   	} else if (text.includes('Snow')) {
   		document.body.style.backgroundImage = 'url(img/snowy.jpg)';
+  	} else if (text.includes('Rain And Snow')) {
+  		document.body.style.backgroundImage = 'url(img/rainAndSnow.jpg)';
   	}
 
   });
