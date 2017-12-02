@@ -1,21 +1,12 @@
-// fetch('https://weather.com/weather/tenday/l/UPXX0017:1:UP')
-// .then(function (response) {
-//         return response.text();
-//     })
-//     .then(function (html) {
-//     	var siteCode = document.createElement('html');
-//     	siteCode.innerHTML = html;
-//     	console.log(siteCode.getElementsByTagName('tr'));
-//     })
-//     .catch(console.error);
+window.onload = loadSite('lviv');
 
-    
-// 	'https://weather-ydn-yql.media.yahoo.com/forecastrss?w=924943&u=c'
-
-let a = `https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(924943)%20and%20u=%27c%27&format=json` 
+function loadSite(city) {
+let a = `https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22` + city + `%22)%20and%20u%3D%22c%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`
 fetch(a).then(res=>res.json()).then(function(data) {
+	console.log(data);
   	for (let i = 0; i <= 4; i++) {
   		let dayInf = data.query.results.channel.item.forecast[i];
+  		let loc = data.query.results.channel.location.city;
   		let temp = "від " + dayInf.low + " до " + dayInf.high;
   		let text = dayInf.text;
   		let date = dayInf.date;
@@ -23,12 +14,14 @@ fetch(a).then(res=>res.json()).then(function(data) {
   		let tempIns = document.getElementById('temp' + i);
   		let textIns = document.getElementById('text' + i);
   		let dateIns = document.getElementById('date' + i);
-  		let dayIns = document.getElementById('day' + i);  		
+  		let dayIns = document.getElementById('day' + i);  
+  		let locIns = document.getElementById('weather-in-city');		
 
   		textIns.innerHTML = text;
   		tempIns.innerHTML = temp;
   		dateIns.innerHTML = date;
   		dayIns.innerHTML = day;
+  		locIns.innerHTML = loc;
   	}
 
   	let text = data.query.results.channel.item.forecast[0].text;
@@ -41,26 +34,7 @@ fetch(a).then(res=>res.json()).then(function(data) {
   		document.body.style.backgroundImage = 'url(img/sunny.jpg)';
   	} else if (text.includes('Snow')) {
   		document.body.style.backgroundImage = 'url(img/snowy.jpg)';
-  	} else if (text.includes('Rain And Snow')) {
-  		document.body.style.backgroundImage = 'url(img/rainAndSnow.jpg)';
   	}
 
   });
-
-  // var callbackFunction = 
-
-
-
-
-
-
-// function httpGet(theUrl) {
-//     let xmlHttp = null;
- 
-//     xmlHttp = new XMLHttpRequest();
-//     xmlHttp.open( "GET", theUrl, false );
-//     xmlHttp.send( null );
-//     alert(xmlHttp.responseText);
-// }
-
-// httpGet('http://meteo.gov.ua/ua/33393');
+}

@@ -16,24 +16,29 @@ header span {
 	font-size: 3em;
 }
 
-.choose-city:hover {
-	color: red;
-	float: left;
-	margin-left: 1em;
-}
-
 .choose-city {
 	float: left;
 	margin-left: 1em;
 }
 
-.select-city {
-	display: none;
+.city-name {
+	margin-left: 1em;
+	float: left;
+	height: 2em;
 }
 
-main span:nth-of-type(2) {
+.weather-in-city {
+	font-family: Helvetica;
 	font-size: 2em;
 	text-align: center;
+}
+
+.button {
+	width: auto;
+	height: 2em;
+	background-color: white;
+	float: left;
+	margin-left: 1em;
 }
 
 main {
@@ -46,6 +51,7 @@ main {
 } 
 
 .days {
+	background-color: white;
 	margin-top: 3em;
 	margin-right: 1em;
 	display: inline-block;

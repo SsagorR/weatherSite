@@ -11,15 +11,10 @@
 		<span>Weather Site</span>
 	</header>
 	<main>
-		<span class="choose-city">Select City</span>
-			<div class="select-city">
-				<span>Kyiv</span><br>
-				<span>Lviv</span><br>
-				<span>Odesa</span><br>
-				<span>Dnipro</span><br>
-				<span>Harkiv</span>
-			</div>
-		<span class="weather-in-city">Weather in Lviv</span> <br>
+		<span class="choose-city">Select Your City</span> <br> <br>
+		<input type="text" id="city-name" class="city-name" placeholder="Write Your City's Name" value="lviv"> 
+		<button class="button" onclick="loadSite(document.getElementById('city-name').value)" >Load Weather</button>
+		<span class="weather-in-city">Weather in </span><span class='weather-in-city' id='weather-in-city'></span><br>
 		<div class="weather">
 			<div class="days"> <div id='day0' class='weekday'></div> <br>
 			 <span id='date0'></span> <br>
