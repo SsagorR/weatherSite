@@ -3,11 +3,18 @@ window.onload = loadSite('lviv');
 function loadSite(city) {
 let a = `https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22` + city + `%22)%20and%20u%3D%22c%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys`
 fetch(a).then(res=>res.json()).then(function(data) {
-	console.log(data);
+  		let loc = data.query.results.channel.location.city;
+  		let locRep = loc
+  		.replace(/[`~!@#$%^&*()_|+\-=?\s;:'",.<>\{\}\[\]\\\/]/gi, '')
+        .toLowerCase();
+
+        let cityRep = city
+  		.replace(/[`~!@#$%^&*()_|+\-=?\s;:'",.<>\{\}\[\]\\\/]/gi, '')
+        .toLowerCase();
+        if (cityRep === locRep) {
   	for (let i = 0; i <= 4; i++) {
   		let dayInf = data.query.results.channel.item.forecast[i];
-  		let loc = data.query.results.channel.location.city;
-  		let temp = "від " + dayInf.low + " до " + dayInf.high;
+  		let temp = "from " + dayInf.low + " to " + dayInf.high;
   		let text = dayInf.text;
   		let date = dayInf.date;
   		let day = dayInf.day;
@@ -35,6 +42,6 @@ fetch(a).then(res=>res.json()).then(function(data) {
   	} else if (text.includes('Snow')) {
   		document.body.style.backgroundImage = 'url(img/snowy.jpg)';
   	}
-
+  }
   });
 }
