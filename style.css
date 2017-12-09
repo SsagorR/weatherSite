@@ -27,6 +27,14 @@ header span {
 	height: 2em;
 }
 
+.inputHelper {
+	margin-left: 1em;
+	float: left;
+	height: auto;
+	background-color: white;
+	width: 3em;
+}
+
 .weather-in-city {
 	font-family: Helvetica;
 	font-size: 2em;
