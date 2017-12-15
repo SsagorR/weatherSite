@@ -22,15 +22,15 @@ header span {
 }
 
 .city-name {
-	margin-left: 1em;
+	margin: 0 0 0 1em;
 	float: left;
-	height: 2em;
+	height: 4vh;
 }
 
 .inputHelper {
-	margin-left: 1em;
+	margin: 0 0 0 1em;
 	float: left;
-	height: auto;
+	height: 4vh;
 	background-color: white;
 	width: 3em;
 }
@@ -43,9 +43,9 @@ header span {
 
 .button {
 	width: auto;
-	height: 2em;
-	background-color: white;
 	float: left;
+	height: 4vh;
+	background-color: white;
 	margin-left: 1em;
 }
 
