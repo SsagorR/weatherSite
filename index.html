@@ -12,16 +12,17 @@
 	</header>
 	<main>
 		<span class="choose-city">Select Your City</span> <br> <br>
-		
-		<input type="text" id="city-name" class="city-name" placeholder="Write Your City's Name" value="lviv"> 
-		<button class="button" onclick="loadSite(document.getElementById('city-name').value)" >Load Weather</button>
-			<br>
-			<br>
-			<div class="inputHelper">
-				<div id="city0"></div><br>
-				<div id="city1"></div><br>
-				<div id="city2"></div>
+		<div class="qwerty">
+			<div>
+				<input type="text" id="city-name" class="city-name" placeholder="Write Your City's Name" value="lviv"> 
+				<button class="button" onclick="loadSite(document.getElementById('city-name').value)" >Load Weather</button>
 			</div>
+			<div class="inputHelper" id="inputHelper">
+				<div id="city0" onclick="inputName(document.getElementById('city0')); loadSite(document.getElementById('city0').innerHTML);"></div><div id="city00"></div><br>
+				<div id="city1" onclick="inputName(document.getElementById('city1')); loadSite(document.getElementById('city1').innerHTML);"></div><div id="city11"></div><br>
+				<div id="city2" onclick="inputName(document.getElementById('city2')); loadSite(document.getElementById('city2').innerHTML);"></div><div id="city22"></div>
+			</div>
+		</div>
 		<span class="weather-in-city">Weather in </span><span class='weather-in-city' id='weather-in-city'></span><br>
 		<div class="weather">
 			<div class="days"> <div id='day0' class='weekday'></div> <br>

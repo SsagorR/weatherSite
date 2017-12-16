@@ -45,25 +45,36 @@ fetch(a).then(res=>res.json()).then(function(data) {
   	}
   }
   });
+	document.getElementById('city-name').value = '';
+	document.getElementById('inputHelper').style.display = 'none';
 }
 
 document.getElementById('city-name').oninput = function userHelp() {
-	let name = document.getElementById('city-name').value
+	let name = document.getElementById('city-name').value;
 	if (name.length > 2) {
 		fetch('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22'+ name +'%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys')
 		.then(res=>res.json()).then(function(data) {
+			document.getElementById('inputHelper').style.display = 'inline';
 			for (let i = 0; i < 3; i++) {
 				let cityName = {
 					name: data.query.results.place[i].name,
 					country: data.query.results.place[i].country.code
 				}
-				document.getElementById('city' + i).innerHTML = cityName.name + ' ' + cityName.country;
+				document.getElementById('city' + i).innerHTML = cityName.name;
+				document.getElementById('city' + i + i).innerHTML = cityName.country;
 			}
 		});
 	}
 	if (name.length == 0 || name.length == 1 || name.length == 2) {
-		for (let y = 0; y < 3; y++){
+		for (let y = 0; y < 3; y++) {
 			document.getElementById('city' + y).innerHTML = '';
 		}
+		document.getElementById('inputHelper').style.display = 'none';
 	}
 }
+
+function inputName(name) {
+	document.getElementById('city-name').value = name.innerHTML;
+}
+
+

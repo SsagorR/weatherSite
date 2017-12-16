@@ -22,17 +22,27 @@ header span {
 }
 
 .city-name {
-	margin: 0 0 0 1em;
+	margin-left: 1vw;
 	float: left;
 	height: 4vh;
+	width: 15vw;
+	padding-left: 0.4vw;
+}
+
+.qwerty {
+	position: relative;
 }
 
 .inputHelper {
-	margin: 0 0 0 1em;
+	position: absolute;
+	top: 4vh;
+	display: none;
+	margin-left: 1vw;
 	float: left;
-	height: 4vh;
+	min-height: 0;
+	height: auto;
 	background-color: white;
-	width: 3em;
+	width: 15vw;
 }
 
 .weather-in-city {
@@ -47,6 +57,11 @@ header span {
 	height: 4vh;
 	background-color: white;
 	margin-left: 1em;
+}
+
+.qwerty {
+	display: flex;
+	flex-direction: column;
 }
 
 main {
@@ -82,4 +97,8 @@ main {
  	border-bottom: 3px solid black;
 	border-right: 3px solid black;
 	border-radius: 10px;
+}
+
+#city0, #city1, #city2 {
+	cursor: pointer;
 }
