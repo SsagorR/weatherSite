@@ -34,15 +34,21 @@ fetch(a).then(res=>res.json()).then(function(data) {
 
   	let text = data.query.results.channel.item.forecast[0].text;
 
-  	if (text.includes('Cloudy')) {
-  		document.body.style.backgroundImage = 'url(img/cloudy.jpg)';
-  	} else if (text.includes('Rain')) {
-  		document.body.style.backgroundImage = 'url(img/raining.jpg)';
-  	} else if (text.includes('Sun')) {
-  		document.body.style.backgroundImage = 'url(img/sunny.jpg)';
-  	} else if (text.includes('Snow')) {
-  		document.body.style.backgroundImage = 'url(img/snowy.jpg)';
-  	}
+	if (window.innerHeight < window.innerWidth) {
+	
+	  	if (text.includes('Cloudy')) {
+	  		document.body.style.backgroundImage = 'url(img/cloudy.jpg)';
+	  	} else if (text.includes('Rain')) {
+	  		document.body.style.backgroundImage = 'url(img/raining.jpg)';
+	  	} else if (text.includes('Sun')) {
+	  		document.body.style.backgroundImage = 'url(img/sunny.jpg)';
+	  	} else if (text.includes('Snow')) {
+	  		document.body.style.backgroundImage = 'url(img/snowy.jpg)';
+	  	}
+	} else {
+		document.body.style.backgroundColor = '#bbd0f7';
+	}
+
   }
   });
 	document.getElementById('city-name').value = '';
@@ -66,9 +72,7 @@ document.getElementById('city-name').oninput = function userHelp() {
 		});
 	}
 	if (name.length == 0 || name.length == 1 || name.length == 2) {
-		for (let y = 0; y < 3; y++) {
-			document.getElementById('city' + y).innerHTML = '';
-		}
+		
 		document.getElementById('inputHelper').style.display = 'none';
 	}
 }
@@ -76,5 +80,3 @@ document.getElementById('city-name').oninput = function userHelp() {
 function inputName(name) {
 	document.getElementById('city-name').value = name.innerHTML;
 }
-
-

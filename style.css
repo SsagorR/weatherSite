@@ -15,17 +15,13 @@ header {
 header span {
 	font-size: 3em;
 }
-
-.choose-city {
-	float: left;
-	margin-left: 1em;
-}
+	
 
 .city-name {
-	margin-left: 1vw;
-	float: left;
-	height: 4vh;
-	width: 15vw;
+/*	margin-left: 15px;
+*/	float: left;
+	height: 30px;
+	width: 200px;
 	padding-left: 0.4vw;
 }
 
@@ -37,12 +33,12 @@ header span {
 	position: absolute;
 	top: 4vh;
 	display: none;
-	margin-left: 1vw;
+	/*margin-left: 15px;*/
 	float: left;
 	min-height: 0;
 	height: auto;
 	background-color: white;
-	width: 15vw;
+	width: 200px;
 }
 
 .weather-in-city {
@@ -54,10 +50,10 @@ header span {
 .button {
 	width: auto;
 	float: left;
-	height: 4vh;
+	height: 30px;
 	background-color: white;
-	margin-left: 1em;
-}
+/*	margin-left: 1em;
+*/}
 
 .qwerty {
 	display: flex;
@@ -69,8 +65,8 @@ main {
 }
 
 .weather {
-	border: 1px solid black;
-	height: 20em;
+/*	border: 1px solid black;
+*/	height: 20em;
 } 
 
 .days {
@@ -80,9 +76,9 @@ main {
 	display: inline-block;
 	width: 10em;
 	height: 14em;
-	border: 1px solid black;
 	border-radius: 1em;
 	text-align: center;
+	border: 1px solid black;
 }
 
 .days span {
@@ -101,4 +97,34 @@ main {
 
 #city0, #city1, #city2 {
 	cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+	body {
+		max-width: 100%;
+		height: auto;
+	}
+
+	.city-name {
+		width: 100%;
+		height: 30px;
+	}
+
+	.inputHelper {
+		width: 100%;
+		height: auto;
+	}
+
+	.days {
+		width: 45vw;
+		margin: 5vw 25vw 0 25vW;
+		padding: 0;
+		display: block;
+	}
+}
+
+@media screen and (min-width: 767px) and (max-width: 1025px) {
+	.days {
+		width: 20vw;
+	}
 }

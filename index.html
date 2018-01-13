@@ -2,54 +2,59 @@
 <html>
 <head>
 	<title>Weather Site</title>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css">
+<!-- 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+ -->	<link rel="stylesheet" type="text/css" href="style.css">
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<header> 
-		<span>Weather Site</span>
+	<header class="container"> 
+		<span class="col-xs-12">Weather Site</span>
 	</header>
 	<main>
-		<span class="choose-city">Select Your City</span> <br> <br>
-		<div class="qwerty">
-			<div>
-				<input type="text" id="city-name" class="city-name" placeholder="Write Your City's Name" value="lviv"> 
-				<button class="button" onclick="loadSite(document.getElementById('city-name').value)" >Load Weather</button>
+		<div class="qwerty ">
+			<div class="container col-xs-12">
+				<input type="text" id="city-name" class="city-name col-xs-12 col-md-6 col-lg-10" placeholder="Write Your City's Name" value="lviv"> 
+				<button class="button col-xs-12 col-md-6 col-lg-2" onclick="loadSite(document.getElementById('city-name').value)" >Load Weather</button>
 			</div>
-			<div class="inputHelper" id="inputHelper">
+			<div class="inputHelper col-xs-12" id="inputHelper">
 				<div id="city0" onclick="inputName(document.getElementById('city0')); loadSite(document.getElementById('city0').innerHTML);"></div><div id="city00"></div><br>
 				<div id="city1" onclick="inputName(document.getElementById('city1')); loadSite(document.getElementById('city1').innerHTML);"></div><div id="city11"></div><br>
 				<div id="city2" onclick="inputName(document.getElementById('city2')); loadSite(document.getElementById('city2').innerHTML);"></div><div id="city22"></div>
 			</div>
 		</div>
-		<span class="weather-in-city">Weather in </span><span class='weather-in-city' id='weather-in-city'></span><br>
-		<div class="weather">
-			<div class="days"> <div id='day0' class='weekday'></div> <br>
+		<span class="weather-in-city">Weather in </span><span class='weather-in-city' id='weather-in-city'></span>
+		<div class="weather container" >
+			<div class="days"> 
+				<div id='day0' class='weekday'></div> <br>
 			 <span id='date0'></span> <br>
 				<div id='temp0'></div>
 				<div id='text0'></div>
 			</div>
 
-			<div class="days"> <div id='day1' class='weekday'></div> <br>
+			<div class="days"> 
+				<div id='day1' class='weekday'></div> <br>
 			 <span id='date1'></span> <br> 
 				<div id='temp1'></div> 
 				<div id='text1'></div> 
 			</div>
 
-			<div class="days"> <div id='day2' class='weekday'></div> <br>
+			<div class="days"> 
+				<div id='day2' class='weekday'></div> <br>
 			 <span id='date2'></span> <br> 
 				<div id='temp2'></div>
 				<div id='text2'></div>  
 			</div>
 
-			<div class="days"> <div id='day3' class='weekday'></div> <br>
+			<div class="days"> 
+				<div id='day3' class='weekday'></div> <br>
 			 <span id='date3'></span> <br> 
 				<div id='temp3'></div> 
 				<div id='text3'></div> 
 			</div>
 
-			<div class="days"> <div id='day4' class='weekday'></div> <br>
+			<div class="days"> 
+				<div id='day4' class='weekday'></div> <br>
 			 <span id='date4'></span> <br> 
 				<div id='temp4'></div>
 				<div id='text4'></div> 
