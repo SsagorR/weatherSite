@@ -60,19 +60,21 @@ document.getElementById('city-name').oninput = function userHelp() {
 	if (name.length > 2) {
 		fetch('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.places%20where%20text%3D%22'+ name +'%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys')
 		.then(res=>res.json()).then(function(data) {
-			document.getElementById('inputHelper').style.display = 'inline';
 			for (let i = 0; i < 3; i++) {
 				let cityName = {
 					name: data.query.results.place[i].name,
 					country: data.query.results.place[i].country.code
 				}
+				if (cityName.name !== null && cityName.country !== null)  {
 				document.getElementById('city' + i).innerHTML = cityName.name;
 				document.getElementById('city' + i + i).innerHTML = cityName.country;
+			}
+			document.getElementById('inputHelper').style.display = 'inline';
+
 			}
 		});
 	}
 	if (name.length == 0 || name.length == 1 || name.length == 2) {
-		
 		document.getElementById('inputHelper').style.display = 'none';
 	}
 }
